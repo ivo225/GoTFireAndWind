@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { FOOTER_LINKS } from "@/constants/content";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,26 +13,13 @@ const Footer = () => {
           <div>
             <h3 className="font-cinzel text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/characters" className="text-accent hover:text-primary transition-colors">
-                  Characters
-                </Link>
-              </li>
-              <li>
-                <Link to="/houses" className="text-accent hover:text-primary transition-colors">
-                  Houses
-                </Link>
-              </li>
-              <li>
-                <Link to="/locations" className="text-accent hover:text-primary transition-colors">
-                  Locations
-                </Link>
-              </li>
-              <li>
-                <Link to="/books" className="text-accent hover:text-primary transition-colors">
-                  Books
-                </Link>
-              </li>
+              {FOOTER_LINKS.navigation.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="text-accent hover:text-primary transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -39,21 +27,13 @@ const Footer = () => {
           <div>
             <h3 className="font-cinzel text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/map" className="text-accent hover:text-primary transition-colors">
-                  World Map
-                </Link>
-              </li>
-              <li>
-                <Link to="/timeline" className="text-accent hover:text-primary transition-colors">
-                  Timeline
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-accent hover:text-primary transition-colors">
-                  About
-                </Link>
-              </li>
+              {FOOTER_LINKS.resources.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="text-accent hover:text-primary transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -79,12 +59,15 @@ const Footer = () => {
               © {currentYear} Ice & Fire Encyclopedia. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-accent hover:text-primary transition-colors text-sm">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-accent hover:text-primary transition-colors text-sm">
-                Terms of Use
-              </Link>
+              {FOOTER_LINKS.legal.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-accent hover:text-primary transition-colors text-sm"
+                >
+                  {link.title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

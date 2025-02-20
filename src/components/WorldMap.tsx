@@ -1,12 +1,13 @@
 
-import React, { useState } from 'react';
-import { MapPin, Info } from "lucide-react";
+import { useState } from 'react';
+import { MapPin } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { MAP_LOCATIONS } from "@/constants/content";
 
 interface Location {
   id: number;
@@ -15,37 +16,6 @@ interface Location {
   description: string;
   region: string;
 }
-
-const locations: Location[] = [
-  {
-    id: 1,
-    name: "King's Landing",
-    coordinates: { x: 50, y: 60 },
-    description: "Capital of the Seven Kingdoms",
-    region: "Crownlands"
-  },
-  {
-    id: 2,
-    name: "Winterfell",
-    coordinates: { x: 45, y: 20 },
-    description: "Ancestral seat of House Stark",
-    region: "The North"
-  },
-  {
-    id: 3,
-    name: "Casterly Rock",
-    coordinates: { x: 20, y: 55 },
-    description: "Seat of House Lannister",
-    region: "Westerlands"
-  },
-  {
-    id: 4,
-    name: "The Eyrie",
-    coordinates: { x: 60, y: 40 },
-    description: "Seat of House Arryn",
-    region: "The Vale"
-  }
-];
 
 const WorldMap = () => {
   const [activeLocation, setActiveLocation] = useState<Location | null>(null);
@@ -56,7 +26,7 @@ const WorldMap = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
       </div>
       
-      {locations.map((location) => (
+      {MAP_LOCATIONS.map((location) => (
         <TooltipProvider key={location.id}>
           <Tooltip>
             <TooltipTrigger asChild>
