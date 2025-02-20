@@ -33,15 +33,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* World Map Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="section-title text-center mb-12">Explore the World</h2>
-        <WorldMap />
-      </section>
-
-      {/* Key Locations Section */}
-      <KeyLocations />
-
       {/* Featured Sections */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -79,6 +70,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* World Map Section */}
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="section-title text-center mb-12">Explore the World</h2>
+        <WorldMap />
+      </section>
+
+      {/* Key Locations Section */}
+      <KeyLocations />
 
       {/* Quote Section */}
       <section className="bg-stone py-16 mt-16">
