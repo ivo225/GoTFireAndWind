@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import SoundButton from "./SoundButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,14 +10,15 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
+
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="font-cinzel text-xl font-bold text-primary">
+          <Link to="/" className="font-cinzel text-xl font-bold text-primary hover:text-primary/90 transition-colors">
             Ice & Fire
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <Link to="/characters" className="nav-link">
               Characters
             </Link>
@@ -29,6 +31,9 @@ const Navbar = () => {
             <Link to="/books" className="nav-link">
               Books
             </Link>
+            <div className="flex items-center">
+              <SoundButton />
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -72,6 +77,9 @@ const Navbar = () => {
               >
                 Books
               </Link>
+              <div className="px-4 py-2 flex justify-center">
+                <SoundButton />
+              </div>
             </div>
           </div>
         )}

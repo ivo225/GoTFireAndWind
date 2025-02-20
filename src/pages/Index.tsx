@@ -1,44 +1,66 @@
 
-import { useState } from "react";
-import { Search, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import WorldMap from "../components/WorldMap";
 import KeyLocations from "../components/KeyLocations";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import SearchBar from "../components/SearchBar";
 import { FEATURED_SECTIONS } from "@/constants/content";
 
 const Index = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <div className="flex-grow">
         {/* Hero Section */}
-        <Section className="py-16 md:py-24">
-          <div className="animate-fade-down">
-            <h1 className="hero-title text-center mb-6">
-              A Song of Ice and Fire
-            </h1>
-            <p className="text-accent text-center text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-              Explore the rich world of Westeros and beyond through our comprehensive encyclopedia
-            </p>
+        <Section className="py-16 md:py-24 relative">
+          {/* Left Dragon */}
+          <div className="absolute left-[15%] w-48 h-48 hidden md:block">
+            <img
+              src="/Game-of-Thrones-Dragon-Free.png"
+              alt="Dragon"
+              className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
+              style={{ 
+                filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2))',
+                transform: 'translateY(40px)'
+              }}
+            />
+          </div>
+
+          {/* Right Dragon */}
+          <div className="absolute right-[15%] w-48 h-48 hidden md:block">
+            <img
+              src="/Game-of-Thrones-Dragon-Free.png"
+              alt="Dragon"
+              className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
+              style={{ 
+                filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2))',
+                transform: 'translateY(40px) scaleX(-1)'
+              }}
+            />
+          </div>
+
+          <div className="animate-fade-down max-w-6xl mx-auto px-4">
+            <div className="text-center mb-6">
+              <h1 className="hero-title text-primary text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold tracking-wide leading-tight mb-6">
+                A Song of Ice and Fire
+              </h1>
+            </div>
+            <div className="max-w-2xl mx-auto px-4">
+              <p className="text-accent text-center text-lg md:text-xl font-medium leading-relaxed">
+                Explore the rich world of Westeros and beyond through our comprehensive encyclopedia
+              </p>
+            </div>
             
             {/* Search Bar */}
-            <div className="max-w-lg mx-auto relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search characters, houses, or locations..."
-                className="w-full px-6 py-4 rounded-full border-2 border-stone/20 focus:border-primary focus:outline-none shadow-sm text-lg"
-              />
-              <Search className="absolute right-6 top-1/2 transform -translate-y-1/2 text-stone/50" />
+            <div className="mt-8 md:mt-12">
+              <SearchBar />
             </div>
           </div>
         </Section>
 
         {/* Featured Sections */}
-        <Section className="py-16">
+        <Section className="py-8 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {FEATURED_SECTIONS.map((section) => (
               <div
@@ -60,7 +82,7 @@ const Index = () => {
         </Section>
 
         {/* World Map Section */}
-        <Section className="py-16">
+        <Section className="py-17">
           <h2 className="section-title text-center mb-12">Explore the World</h2>
           <WorldMap />
         </Section>
