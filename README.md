@@ -1,54 +1,73 @@
-# Welcome to your Lovable project
+# Ice and Fire Encyclopedia 🐉
 
-## Project info
+A comprehensive web application exploring the world of George R.R. Martin's "A Song of Ice and Fire" series. Built with React, TypeScript, and modern web technologies.
 
-**URL**: https://lovable.dev/projects/ff0b604e-7075-49d5-88d5-875600e2d4a9
+## Features 🏰
 
-## How can I edit this code?
+- **Books**: Browse through the complete collection of Ice and Fire books, including details about publishers, release dates, and page counts.
+- **Characters**: Explore the vast array of characters, their allegiances, titles, and their roles in the series.
+- **Houses**: Discover the noble houses of Westeros and Essos, their words, seats, and ancestral weapons.
+- **Locations**: Journey through the known world, from the frozen North to the exotic cities of Essos.
 
-There are several ways of editing your application.
+## Technology Stack 🛠
 
-**Use Lovable**
+- React 18 with TypeScript
+- Vite for fast development and building
+- TanStack Query for efficient data fetching
+- Shadcn UI components for a modern, accessible interface
+- Tailwind CSS for styling
+- React Router for navigation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ff0b604e-7075-49d5-88d5-875600e2d4a9) and start prompting.
+## API Integration 🔗
 
-Changes made via Lovable will be committed automatically to this repo.
+This project integrates with the [An API of Ice and Fire](https://anapioficeandfire.com/), providing comprehensive data about:
+- Books
+- Characters
+- Houses
 
-**Use your preferred IDE**
+## Getting Started 🚀
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ivo225/GoTFireAndWind.git
+   cd GoTFireAndWind
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Follow these steps:
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Project Structure 📁
 
-# Step 3: Install the necessary dependencies.
-npm i
+- `/src`
+  - `/components` - Reusable UI components
+  - `/pages` - Main route components
+  - `/hooks` - Custom React hooks
+  - `/services` - API integration
+  - `/data` - Static data and types
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Contributing 🤝
 
-**Edit a file directly in GitHub**
+Contributions are welcome! Feel free to submit issues and pull requests.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## License 📄
 
-**Use GitHub Codespaces**
+This project is open source and available under the MIT License.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
+
+*"When you play the game of thrones, you win or you die." - Cersei Lannister*
 
 ## What technologies are used for this project?
 
