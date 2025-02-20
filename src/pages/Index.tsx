@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { Search, ChevronRight } from "lucide-react";
+import WorldMap from "../components/WorldMap";
+import KeyLocations from "../components/KeyLocations";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +32,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* World Map Section */}
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="section-title text-center mb-12">Explore the World</h2>
+        <WorldMap />
+      </section>
+
+      {/* Key Locations Section */}
+      <KeyLocations />
 
       {/* Featured Sections */}
       <section className="container mx-auto px-4 py-16">
